@@ -7,16 +7,16 @@ Settings
 $(&quot;.data\_container&quot;).autoload({
 
         scrollContainer: $(document), //optional
-        loader : null,
-        bottomOffset : 100,
-        autoScrollPx : 200,
+        loader : null,                //optional
+        bottomOffset : 100,           //optional
+        autoScrollPx : 200,           //optional
         ajax : {
-         url : null,
-         method :&quot;GET&quot;,
-         data : null,
-         dataType : &quot;html&quot;,
-         onSuccess : null,
+         url : null,                  //require
+         method :&quot;GET&quot;,     //optional
+         data : null,                 //optional
+         dataType : &quot;html&quot;, //optional
+         onSuccess : null,            //require
         },
-        responsive : null,
-        
+        responsive : null,            //optional
+
     });
