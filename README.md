@@ -1,6 +1,6 @@
 **Auto Loader Jquery Plugin**
 
-   If you need auto ajax load function when scrolling end, this plugin can help you to achieve it.
+   "If" you need auto ajax load function when scrolling end, this plugin can help you to achieve it.
 
 Settings
 
