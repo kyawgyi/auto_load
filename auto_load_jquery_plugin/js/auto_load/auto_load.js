@@ -2,6 +2,7 @@ $.fn.autoload = function(options) {
 	var target = $(this);
 	var loadStatus = false;
 	var previous_maxScroll = 0;
+    var previous_scroll = 99999999;
 	var settings = $.extend({
         scrollContainer: $(document),
         loader : null,    
@@ -40,7 +41,7 @@ $.fn.autoload = function(options) {
     		maxScroll = settings.scrollContainer.prop("scrollHeight");
     	}    	
     	
-    	if(scrollPos > maxScroll - settings.bottomOffset)
+    	if(scrollPos > maxScroll - settings.bottomOffset && previous_scroll < scrollPos)
     	{
     		
     		if( previous_maxScroll != maxScroll && !loadStatus){    			
@@ -50,7 +51,8 @@ $.fn.autoload = function(options) {
     			settings.loader.show();
     			loadStatus = true;
     		}
-    	}    	
+    	} 
+        previous_scroll = scrollPos;  	
     });
 
     function __autoload_ajax_call(){
