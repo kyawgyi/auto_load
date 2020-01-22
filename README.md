@@ -81,7 +81,7 @@ $(".data_container").autoload({
     bottomOffset : 200,      //no need to add px
     responsive : [
         {
-			breakpoint : 768,
+			breakpoint : 768,  //setting will effect when device width <= 768px
 			bottomOffset : 100,
 			autoScrollPx : 500,
 		}
