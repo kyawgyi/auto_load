@@ -95,8 +95,8 @@ $(".data_container").autoload({
   });
   ```
   *ScrollingContainer*
-  
-  In most case, Scrollingcontainer will be document itself because we want to load data on document scrolling event.Sometime, you may want to use a <div> as an scrollingcontainer to control its content.
+
+  In most case, Scrollingcontainer will be document itself because we want to load data on document scrolling event.Sometime, you may want to use a DIV tag as an scrollingcontainer to control its content.
   
   
   
