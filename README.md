@@ -5,6 +5,7 @@
 Settings
 
 $(&quot;.data\_container&quot;).autoload({
+
         scrollContainer: $(document), //optional
         loader : null,
         bottomOffset : 100,
@@ -17,4 +18,5 @@ $(&quot;.data\_container&quot;).autoload({
          onSuccess : null,
         },
         responsive : null,
+        
     });
