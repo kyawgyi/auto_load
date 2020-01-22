@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>auto laod</title>
+	<style type="text/css">
+		ul li{
+			border:1px solid black;
+			padding:15px;
+			margin:10px;
+		}
+
+		.loader{
+			display: none;			
+			position: fixed;
+			left:50%;
+			top:50%;
+			margin-left:-100px;
+			background: red;
+			padding:10px;
+			font-size:28px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="data_container">
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+		<li>aaaaaaaaaaaaaaaaaaaaaaaaa</li>
+		<li>bbbbbbbbbbbbbbbbbbbbbbbbb</li>
+	</ul>
+	<div class="loader">Loading</div>
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/auto_load/auto_load.js"></script>
+	<script type="text/javascript">
+		$(".data_container").autoload({
+			loader :  $(".loader"),
+			responsive : [
+				{
+					breakpoint : 768,
+					bottomOffset : 100,
+        			autoScrollPx : 500,
+				}
+			],
+			ajax : {
+	        	url : "http://localhost:8012/test.php",
+	        	onSuccess : function(response){	        		
+	        		$(".data_container").append(response);
+	        	}
+	        },
+		});
+	</script>
+</body>
+</html>
