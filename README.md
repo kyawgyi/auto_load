@@ -1,3 +1,4 @@
+
 **Auto Loader Jquery Plugin**
 
    If you need auto ajax load function when scrolling end, this plugin can help you to achieve it.
@@ -24,7 +25,7 @@ we can use auto load on that container as follow.
 $(".data_container").autoload({
    ajax : {
             url : "put your link to call ajax data",
-            onSuccess : function(){
+            onSuccess : function(response){
              $(".data_container").append(response);
             }
         },
@@ -36,7 +37,7 @@ $(".data_container").autoload({
     loader :  $(".loader"),  //put loader element here, plugin will handle for show / hide action.
     ajax : {
             url : "put your link to call ajax data",
-            onSuccess : function(){
+            onSuccess : function(response){
              $(".data_container").append(response);
             }
         },
@@ -51,7 +52,7 @@ $(".data_container").autoload({
     bottomOffset : 200,      //no need to add px
     ajax : {
             url : "put your link to call ajax data",
-            onSuccess : function(){
+            onSuccess : function(response){
              $(".data_container").append(response);
             }
         },
@@ -65,7 +66,7 @@ $(".data_container").autoload({
     autoScrollPx : 500,      //when loading finish, scroll up to 500px
     ajax : {
             url : "put your link to call ajax data",
-            onSuccess : function(){
+            onSuccess : function(response){
              $(".data_container").append(response);
             }
         },
@@ -88,7 +89,7 @@ $(".data_container").autoload({
     ]
     ajax : {
             url : "put your link to call ajax data",
-            onSuccess : function(){
+            onSuccess : function(response){
              $(".data_container").append(response);
             }
         },

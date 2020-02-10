@@ -1,0 +1,26 @@
+{
+  "name": "auto_load_jquery_plugin",
+  "version": "1.0.0",
+  "description": "**Auto Loader Jquery Plugin**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyawgyi/auto_load.git"
+  },
+  "keywords": [
+    "auto",
+    "load",
+    "jquey",
+    "plugin",
+    "ajax"
+  ],
+  "author": "Kyaw Gyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyawgyi/auto_load/issues"
+  },
+  "homepage": "https://github.com/kyawgyi/auto_load#readme"
+}
