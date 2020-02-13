@@ -9,6 +9,7 @@ Default Settings
         loader : null,                //optional
         bottomOffset : 100,           //optional
         autoScrollPx : 200,           //optional
+        autoScrollSpeed: 1000,        //optional
         ajax : {
             url : null,                  //require
             method : "GET",             //optional
@@ -64,6 +65,7 @@ $(".data_container").autoload({
 $(".data_container").autoload({
     loader :  $(".loader"),  //put loader element here, plugin will handle for show / hide action.
     autoScrollPx : 500,      //when loading finish, scroll up to 500px
+    autoScrollSpeed : 500,   //can adjust the scrolling speed. (milisecond)
     ajax : {
             url : "put your link to call ajax data",
             onSuccess : function(response){

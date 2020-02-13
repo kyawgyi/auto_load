@@ -8,6 +8,7 @@ $.fn.autoload = function(options) {
         loader : null,    
         bottomOffset : 100,
         autoScrollPx : 200,
+        autoScrollSpeed: 1000,
         ajax : {
         	url : null,
         	method :"GET",
@@ -66,9 +67,9 @@ $.fn.autoload = function(options) {
 		    	settings.ajax.onSuccess(response);
 		    	var currentPos = settings.scrollContainer.scrollTop();
 		    	if(settings.scrollContainer[0] == $(document)[0]){
-		    		$("html, body").animate({ scrollTop: currentPos + settings.autoScrollPx },function(){ loadStatus = false; });
+		    		$("html, body").animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
 		    	}else{
-		    		settings.scrollContainer.animate({ scrollTop: currentPos + settings.autoScrollPx },function(){ loadStatus = false; });
+		    		settings.scrollContainer.animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
 		    	} 	
 		    	if(settings.loader)
     			settings.loader.hide();	    	
