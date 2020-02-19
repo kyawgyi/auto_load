@@ -34,7 +34,7 @@ $(".data_container").autoload({
   //when doing ajax call, page number will added by plugin.
   //page number will also increase after each call
   //plugin assume page 1 data is already load and will start with page 2 on first ajax call.
-  
+
   ```
   To use loading spinner 
   ```
@@ -88,13 +88,13 @@ $(".data_container").autoload({
     loader :  $(".loader"),  //put loader element here, plugin will handle for show / hide action.
     bottomOffset : 200,      //no need to add px
     responsive : [
-        {
-			     breakpoint : 768,   //setting will effect when device width <= 768px
-			     bottomOffset : 100, //(optional)if need to overwrite the bottomOffset value on this screen size
-           autoScrollPx : 500, //(optional)if need to overwrite the autoScrollPx value on this screen size
-           ajax_url : "put your link",//(optional)if need to overwrite the ajax url value on this screen size
-			     ajax_data : {pagesize: 5}, //(optional)if need to overwrite the ajax url value on this screen size
-		    }
+      {
+        breakpoint : 768,   //setting will effect when device width <= 768px
+        bottomOffset : 100, //(optional)if need to overwrite the bottomOffset value on this screen size
+        autoScrollPx : 500, //(optional)if need to overwrite the autoScrollPx value on this screen size
+        ajax_url : "put your link",//(optional)if need to overwrite the ajax url value on this screen size
+        ajax_data : {pagesize: 5}, //(optional)if need to overwrite the ajax url value on this screen size
+		  }
     ]
     ajax : {
             url : "put your link to call ajax data",
