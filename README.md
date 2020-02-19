@@ -31,6 +31,10 @@ $(".data_container").autoload({
             }
         },
   });
+  //when doing ajax call, page number will added by plugin.
+  //page number will also increase after each call
+  //plugin assume page 1 data is already load and will start with page 2 on first ajax call.
+  
   ```
   To use loading spinner 
   ```
@@ -78,16 +82,19 @@ $(".data_container").autoload({
   Sometime you many need to set button offset and scrolling length separately for different device.
   example :  100 for pc and 200 for mobile
   plugin can support for responsive breakpoint to set
+
 ```
 $(".data_container").autoload({
     loader :  $(".loader"),  //put loader element here, plugin will handle for show / hide action.
     bottomOffset : 200,      //no need to add px
     responsive : [
         {
-			breakpoint : 768,  //setting will effect when device width <= 768px
-			bottomOffset : 100,
-			autoScrollPx : 500,
-		}
+			     breakpoint : 768,   //setting will effect when device width <= 768px
+			     bottomOffset : 100, //(optional)if need to overwrite the bottomOffset value on this screen size
+           autoScrollPx : 500, //(optional)if need to overwrite the autoScrollPx value on this screen size
+           ajax_url : "put your link",//(optional)if need to overwrite the ajax url value on this screen size
+			     ajax_data : {pagesize: 5}, //(optional)if need to overwrite the ajax url value on this screen size
+		    }
     ]
     ajax : {
             url : "put your link to call ajax data",
@@ -96,7 +103,8 @@ $(".data_container").autoload({
             }
         },
   });
-  ```
+```
+
   *ScrollingContainer*
 
   In most case, Scrollingcontainer will be document itself because we want to load data on document scrolling event.Sometime, you may want to use a DIV tag as an scrollingcontainer to control its content.

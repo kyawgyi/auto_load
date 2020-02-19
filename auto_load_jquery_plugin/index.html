@@ -57,6 +57,7 @@
 	<script type="text/javascript">
 		$(".data_container").autoload({
 			loader :  $(".loader"),
+			autoScrollSpeed : 2500,
 			responsive : [
 				{
 					breakpoint : 768,
@@ -64,11 +65,11 @@
         			autoScrollPx : 500,
 				}
 			],
-			ajax : {
-	        	url : "put your link to call ajax data",
-	        	onSuccess : function(response){	        		    		
-	        		$(".data_container").append(response);
-	        	}
+			ajax :{
+		        	url : "http://localhost:8012/auto_load_jquery_plugin/test.php",
+		        	onSuccess : function(response){	        		    		
+		        		$(".data_container").append(response);
+		        	}
 	        },
 		});
 	</script>

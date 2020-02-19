@@ -1,6 +1,6 @@
 {
   "name": "auto_load_jquery_plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "**Auto Loader Jquery Plugin**",
   "main": "index.js",
   "scripts": {
