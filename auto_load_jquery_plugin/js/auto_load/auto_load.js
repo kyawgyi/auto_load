@@ -29,7 +29,7 @@ $.fn.autoload = function(options) {
                 if(typeof r_set.bottomOffset != "undefined")
                     settings.bottomOffset = r_set.bottomOffset;
 
-                if(typeof r_set.bottomOffset != "undefined")
+                if(typeof r_set.autoScrollPx != "undefined")
                     settings.autoScrollPx = r_set.autoScrollPx;
 
                 if(typeof r_set.ajax_url != "undefined")
@@ -64,7 +64,7 @@ $.fn.autoload = function(options) {
                 loadStatus = true;
             }
         } 
-        previous_scroll = scrollPos;    
+        previous_scroll = scrollPos;  
     });
 
     function __autoload_ajax_call(){
@@ -75,15 +75,17 @@ $.fn.autoload = function(options) {
           url: settings.ajax.url,
           data: settings.ajax.data,
           dataType : settings.ajax.dataType,
-        })        
+        })      
         .done(function( response ) {                
                 settings.ajax.onSuccess(response);
                 var currentPos = settings.scrollContainer.scrollTop();
-                if(settings.scrollContainer[0] == $(document)[0]){
-                    $("html, body").animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
-                }else{
-                    settings.scrollContainer.animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
-                }   
+                if(settings.autoScrollPx != 0){
+                    if(settings.scrollContainer[0] == $(document)[0]){
+                        $("html, body").animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
+                    }else{
+                        settings.scrollContainer.animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
+                    }  
+                }                 
                 if(settings.loader)
                 settings.loader.hide();   
                 settings.page++;        
