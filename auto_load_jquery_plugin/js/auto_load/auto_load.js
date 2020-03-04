@@ -85,7 +85,9 @@ $.fn.autoload = function(options) {
                     }else{
                         settings.scrollContainer.animate({ scrollTop: currentPos + settings.autoScrollPx },settings.autoScrollSpeed,function(){ loadStatus = false; });
                     }  
-                }                 
+                }else{
+                    loadStatus = false;
+                }               
                 if(settings.loader)
                 settings.loader.hide();   
                 settings.page++;        
